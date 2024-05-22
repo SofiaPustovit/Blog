@@ -1,11 +1,13 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {HeaderComponent} from "./components/header-skip-tests/header.component";
+import {HeaderComponent} from "./components/header/header.component";
+import {RouterLink} from "@angular/router";
 
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterLink,
   ],
   declarations: [
     HeaderComponent,

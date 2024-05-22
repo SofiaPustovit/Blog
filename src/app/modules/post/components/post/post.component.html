@@ -1,0 +1,19 @@
+
+<div class="post" >
+    <div class="post__img">
+      <img [src]='post.src' alt="cat">
+    </div>
+    <p class="post__date"></p>
+    <h2 class="post__title">{{post.title}}</h2>
+    <p class="post__text">{{post.text}}</p>
+    <ul class="post__tags" >
+      <li class="post__tags-item" *ngFor="let tag of post.tags">
+        {{tag}}
+      </li>
+    </ul>
+</div>
+
+
+
+
+

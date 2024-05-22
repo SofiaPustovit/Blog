@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
+import {postData} from "../../../../data/post-data";
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+    protected readonly postData = postData;
 }
