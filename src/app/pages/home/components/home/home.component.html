@@ -1,5 +1,7 @@
 <section class="home">
   <h1 class="home__title">THE BLOG</h1>
   <p class="home__text">All blog posts</p>
-  <app-post *ngFor="let post of postData" [post]="post" ></app-post>
+  <div class="home__post">
+  <app-post  *ngFor="let post of postData" [post]="post" ></app-post>
+  </div>
 </section>

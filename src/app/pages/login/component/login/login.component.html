@@ -1,1 +1,14 @@
-<p>login works!</p>
+<form [formGroup]="userForm">
+  <div class="form">
+    <p class="form__title"> Log in!</p>
+    <div class="form__container">
+      <label class="form__label">Name:
+      <input formControlName = 'userName' type="text" class="form__input">
+      </label>
+      <label class="form__label"> Password:
+        <input formControlName="userPassword" type="text" class="form__input">
+      </label>
+    </div>
+    <button class="form__btn">Log in</button>
+  </div>
+</form>
