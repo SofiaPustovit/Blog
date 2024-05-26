@@ -3,6 +3,7 @@ import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {LoginComponent} from "./component/login/login.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {AuthService} from "../../services/auth.service";
 
 
 
@@ -22,6 +23,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     ],
     declarations:
       [LoginComponent],
+    providers:
+      [AuthService]
   }
 )
 

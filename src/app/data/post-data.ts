@@ -1,4 +1,4 @@
-import {IPost} from "../intefaces/post";
+import {IPost} from "../intefaces/post.interface";
 
 export const postData:IPost[] = [
   {
