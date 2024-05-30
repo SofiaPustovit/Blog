@@ -12,28 +12,26 @@ header{
   padding-top: 40px;
 }
 
-.your__name p{
+.header__logo{
   font-weight: 600;
   font-size: 20px;
   line-height: 120%;
   color: var(--font-color);
 }
-.nav{
+.header__nav{
   display: flex;
   justify-content: space-between;
 }
 
-.nav ul {
+.header__nav .nav-list {
   list-style: none;
   display: flex;
   justify-content: space-between;
   column-gap: 25px;
 }
-.nav ul:hover{
 
-}
 
-.nav ul a{
+.header__nav .nav-list .nav-link{
   text-decoration: none;
   font-weight: 400;
   font-size: 20px;

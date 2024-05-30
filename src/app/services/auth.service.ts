@@ -2,6 +2,8 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable, tap} from "rxjs";
 import {environment} from "../../environments/environment";
+import {ObservableInterface} from "../intefaces/observable.interface";
+import {UserInterface} from "../intefaces/user.interface";
 
 @Injectable(
 
@@ -20,7 +22,7 @@ export class AuthService {
     }
   }
 
-  login(user: any): Observable<any> {
+  login(user: UserInterface): Observable<ObservableInterface> {
     return this.http.post<any>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, user)
       .pipe(
         tap(this.setToken)
