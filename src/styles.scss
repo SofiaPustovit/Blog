@@ -1,4 +1,37 @@
 
-@import "~quill/dist/quill.core.css";
-@import "~quill/dist/quill.show.css";
+@import "quill/dist/quill.core.css";
+@import "quill/dist/quill.snow.css";
+
+body{
+  background-color: rgba(225, 240, 251, 0.37);
+}
+
+.ql-container{
+  display: grid;
+  gap: 20px;
+}
+
+.ql-editor {
+  padding: 0 ;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 16px;
+  color: #1a1a1a;
+  img{
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+  }
+
+}
+
+
+
+
+
+
+
+
 

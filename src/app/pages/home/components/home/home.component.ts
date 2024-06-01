@@ -1,12 +1,29 @@
-import {Component, NgModule} from '@angular/core';
-import {postData} from "../../../../data/post-data";
+import {Component, NgModule, OnInit} from '@angular/core';
+import {PostService} from "../../../../services/post.service";
+import {IPost} from "../../../../intefaces/post.interface";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
 
-    protected readonly postData = postData;
+    posts: IPost[] = [];
+
+    constructor(private postService: PostService) {
+
+    }
+
+    ngOnInit(){
+      this.initializePost()
+    }
+
+    initializePost(){
+      this.postService.getAllPost().subscribe(response=>{
+        this.posts = response;
+      })
+
+
+    }
 }

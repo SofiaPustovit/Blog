@@ -1,0 +1,23 @@
+.main {
+  width: 1216px;
+  margin: 0 auto;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 400;
+    padding-top: 30px;
+    text-align: center;
+
+  }
+
+  &__title::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 1px;
+    width: 1200px;
+    background-color: #1a1a1a;
+    margin-bottom: 20px;
+  }
+}

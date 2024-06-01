@@ -16,7 +16,6 @@ import {QuillEditorComponent, QuillModule} from "ngx-quill";
   standalone: true,
   imports: [HttpClientModule, RouterOutlet, HeaderModule, FooterModule, PostModule, QuillEditorComponent],
   providers: [HttpClientModule],
-  exports: [QuillModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 

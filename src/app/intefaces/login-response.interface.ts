@@ -1,5 +1,5 @@
 
-export interface ObservableInterface {
+export interface LoginResponseInterface {
   displayName: string,
   email: string,
   idToken: string,

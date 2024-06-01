@@ -3,6 +3,7 @@ import {CommonModule} from "@angular/common";
 import {HomeComponent} from "./components/home/home.component";
 import {RouterModule} from "@angular/router";
 import {PostModule} from "../../modules/post/post.module";
+import {PostService} from "../../services/post.service";
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import {PostModule} from "../../modules/post/post.module";
   declarations: [
     HomeComponent,
   ],
-  providers: [],
+  providers: [PostService],
 })
 
 export class HomeModule {}
