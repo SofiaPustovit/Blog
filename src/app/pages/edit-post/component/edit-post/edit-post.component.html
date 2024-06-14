@@ -1,6 +1,8 @@
 <main class="main">
   <div class="main__title">Edit your post!</div>
   <div class="main__editor">
-    <app-view-post [task]="'edit'"></app-view-post>
+    <ng-container *ngIf="post">
+      <app-view-post [task]="'edit'" [post]="post"></app-view-post>
+    </ng-container>
   </div>
 </main>

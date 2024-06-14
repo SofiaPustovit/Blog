@@ -7,7 +7,7 @@ import { RouterLink, RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterLink,
-    RouterModule.forChild([{ path: '', component: DetailsPostComponent }]),
+    RouterModule.forChild([{ path: ':id', component: DetailsPostComponent }]),
   ],
   declarations: [DetailsPostComponent],
   exports: [DetailsPostComponent],

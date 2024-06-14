@@ -24,4 +24,21 @@ export class PostService {
         }),
       );
   }
+  getById(id: string): Observable<IPost> {
+    return this.http
+      .get<IPost>(`${environment?.['fbDbUrl']}/posts/${id}.json`)
+      .pipe(
+        map((post) => {
+          const newPost: IPost = { ...post, id };
+          return newPost;
+        }),
+      );
+  }
+
+  updatePost(post: IPost): Observable<IPost> {
+    return this.http.patch<IPost>(
+      `${environment?.['fbDbUrl']}/posts/${post.id}.json`,
+      post,
+    );
+  }
 }

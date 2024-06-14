@@ -11,32 +11,36 @@ import { PostService } from '../../../../services/post.service';
 export class ViewPostComponent implements OnInit {
   postForm!: FormGroup;
   @Input() task = '';
+  @Input() post: IPost | null = null;
 
   constructor(private postService: PostService) {}
 
   ngOnInit() {
     this.initializeForm();
+    console.log(this.post);
   }
 
   submit() {
+    const postForm: IPost = { ...this.postForm.value, date: new Date() };
     if (this.task === 'create') {
-      const postForm: IPost = { ...this.postForm.value, date: new Date() };
-      console.log(postForm);
-      this.postForm.reset();
+      this.postService.createPost(postForm).subscribe((response) => {
+        this.postForm.reset();
+      });
     }
-
-    this.postService.createPost(this.postForm).subscribe((response) => {
-      console.log(response);
-    });
+    if (this.task === 'edit') {
+      this.postService.updatePost(postForm).subscribe((response) => {
+        console.log(response);
+      });
+    }
   }
 
   initializeForm() {
     this.postForm = new FormGroup({
-      image: new FormControl(null, [Validators.required]),
-      author: new FormControl(null, [Validators.required]),
-      title: new FormControl(null, [Validators.required]),
-      text: new FormControl(null, [Validators.required]),
-      category: new FormControl(null, [Validators.required]),
+      image: new FormControl(this.post?.image, [Validators.required]),
+      author: new FormControl(this.post?.author, [Validators.required]),
+      title: new FormControl(this.post?.title, [Validators.required]),
+      text: new FormControl(this.post?.text, [Validators.required]),
+      category: new FormControl(this.post?.category, [Validators.required]),
     });
   }
 }

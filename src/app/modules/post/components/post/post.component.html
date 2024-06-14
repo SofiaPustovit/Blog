@@ -10,5 +10,6 @@
       {{ tag }}
     </li>
   </ul>
+  <button class="post__btn" [routerLink]="['/edit-post', post.id]">Edit</button>
   <button class="post__btn" [routerLink]="['/post', post.id]">Open</button>
 </div>

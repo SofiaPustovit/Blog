@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     loadChildren: () =>
       import('../app/pages/home/home.module').then((m) => m.HomeModule),
   },
@@ -26,10 +26,15 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'post/:id',
+    path: 'post',
     loadChildren: () =>
       import('../app/pages/details-post/details.post.module').then(
         (m) => m.DetailsPostModule,
       ),
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
 ];
