@@ -21,16 +21,22 @@ export class ViewPostComponent implements OnInit {
   }
 
   submit() {
-    const postForm: IPost = { ...this.postForm.value, date: new Date() };
     if (this.task === 'create') {
+      const postForm: IPost = { ...this.postForm.value, date: new Date() };
       this.postService.createPost(postForm).subscribe((response) => {
         this.postForm.reset();
       });
     }
     if (this.task === 'edit') {
+      const postForm: IPost = {
+        ...this.postForm.value,
+        date: new Date(),
+        id: this.post?.id,
+      };
       this.postService.updatePost(postForm).subscribe((response) => {
         console.log(response);
       });
+      this.postForm.reset();
     }
   }
 

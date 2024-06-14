@@ -1,5 +1,10 @@
 <main class="main">
   <div class="main__title">Edit your post!</div>
+  <ng-container *ngIf="isLoading">
+    <div class="main__loading">
+      <div class="loader"></div>
+    </div>
+  </ng-container>
   <div class="main__editor">
     <ng-container *ngIf="post">
       <app-view-post [task]="'edit'" [post]="post"></app-view-post>

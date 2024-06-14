@@ -11,6 +11,7 @@ import { IPost } from '../../../../intefaces/post.interface';
 })
 export class EditPostComponent implements OnInit {
   post!: IPost;
+  isLoading = true;
 
   constructor(
     private postService: PostService,
@@ -26,6 +27,7 @@ export class EditPostComponent implements OnInit {
       )
       .subscribe((res) => {
         this.post = res;
+        this.isLoading = false;
       });
   }
 }
