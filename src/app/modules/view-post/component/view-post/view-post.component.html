@@ -1,42 +1,64 @@
-<form class="form" [formGroup]="postForm"  (ngSubmit)="submit()">
-  <div class="form__container" >
+<form class="form" [formGroup]="postForm" (ngSubmit)="submit()">
+  <div class="form__container">
     <div class="form__group">
-      <label >Image: </label>
+      <label>Image: </label>
       <quill-editor formControlName="image"></quill-editor>
-      <div class="validation" *ngIf="postForm.get('image')?.touched && postForm.get('image')?.invalid">
-        <small *ngIf="postForm.get('image')?.hasError('required')">Not enough characters</small>
+      <div
+        class="validation"
+        *ngIf="postForm.get('image')?.touched && postForm.get('image')?.invalid"
+      >
+        <small *ngIf="postForm.get('image')?.hasError('required')"
+          >Not enough characters</small
+        >
       </div>
     </div>
     <div class="form__group">
-      <label >Text:  </label>
+      <label>Text: </label>
       <quill-editor formControlName="text"></quill-editor>
-      <div class="validation" *ngIf="postForm.get('text')?.touched && postForm.get('text')?.invalid">
-        <small *ngIf="postForm.get('image')?.hasError('required')">Not enough characters</small>
+      <div
+        class="validation"
+        *ngIf="postForm.get('text')?.touched && postForm.get('text')?.invalid"
+      >
+        <small *ngIf="postForm.get('image')?.hasError('required')"
+          >Not enough characters</small
+        >
       </div>
     </div>
     <div class="form__group">
-      <label >Author: </label>
-      <input  formControlName="author">
-      <div class="validation" *ngIf="postForm.get('author')?.touched && postForm.get('author')?.invalid">
-        <small *ngIf="postForm.get('image')?.hasError('required')">Not enough characters</small>
+      <label>Author: </label>
+      <input formControlName="author" />
+      <div
+        class="validation"
+        *ngIf="
+          postForm.get('author')?.touched && postForm.get('author')?.invalid
+        "
+      >
+        <small *ngIf="postForm.get('image')?.hasError('required')"
+          >Not enough characters</small
+        >
       </div>
     </div>
     <div class="form__group">
-      <label >Title: </label>
-      <input  formControlName="title">
-      <div class="validation" *ngIf="postForm.get('title')?.touched && postForm.get('title')?.invalid">
-        <small *ngIf="postForm.get('image')?.hasError('required')">Not enough characters</small>
+      <label>Title: </label>
+      <input formControlName="title" />
+      <div
+        class="validation"
+        *ngIf="postForm.get('title')?.touched && postForm.get('title')?.invalid"
+      >
+        <small *ngIf="postForm.get('image')?.hasError('required')"
+          >Not enough characters</small
+        >
       </div>
     </div>
-      <div class="form__group">
-        <label >Category: </label>
-        <select name="postCategory" id="" formControlName="category" >
-          <option value="nature">Nature</option>
-          <option value="animals">Animals</option>
-          <option value="people">People</option>
-          <option value="culture">Culture</option>
-        </select>
-      </div>
+    <div class="form__group">
+      <label>Category: </label>
+      <select name="postCategory" id="" formControlName="category">
+        <option value="nature">Nature</option>
+        <option value="animals">Animals</option>
+        <option value="people">People</option>
+        <option value="culture">Culture</option>
+      </select>
+    </div>
   </div>
-  <button class="form__btn" type="submit"> Save</button>
+  <button class="form__btn" type="submit">Save</button>
 </form>

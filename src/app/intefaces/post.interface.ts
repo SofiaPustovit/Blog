@@ -3,13 +3,10 @@ export interface IPost {
   date: string;
   title: string;
   text: string;
-  src?:string;
+  src?: string;
   tags?: string[];
-  authors?: {name: string; email: string};
+  authors?: { name: string; email: string };
   image: string;
-  author?:string;
+  author?: string;
   category?: string;
-
 }
-
-

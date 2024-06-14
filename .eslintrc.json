@@ -1,0 +1,8 @@
+{
+  "extends": ["./.eslintrc.prod.json"],
+  "rules": {
+    "no-console": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-unused-expressions": "warn"
+  }
+}

@@ -1,7 +1,17 @@
 <section class="home">
   <h1 class="home__title">THE BLOG</h1>
   <p class="home__text">All blog posts</p>
+  <ng-container *ngIf="isLoading">
+    <div class="home__loading">
+      <div class="loader"></div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isNothing">
+    <div class="home__nothing">
+      <p>Nothing...</p>
+    </div>
+  </ng-container>
   <div class="home__post">
-  <app-post  *ngFor="let post of posts" [post]="post" ></app-post>
+    <app-post *ngFor="let post of posts" [post]="post"></app-post>
   </div>
 </section>

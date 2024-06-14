@@ -1,4 +1,4 @@
-import {IPost} from "../intefaces/post.interface";
+import { IPost } from '../intefaces/post.interface';
 
 // export const postData:IPost[] = [
 //   {
@@ -43,4 +43,3 @@ import {IPost} from "../intefaces/post.interface";
 //     tags:['cat happy'],
 //   },
 // ]
-

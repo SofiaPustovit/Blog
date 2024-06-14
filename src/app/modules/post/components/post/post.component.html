@@ -1,19 +1,14 @@
-
-<div class="post" >
-    <div class="post__img">
-      <quill-view-html [content]="post.image"></quill-view-html>
-    </div>
-    <p class="post__date">{{post.date}}</p>
-    <h2 class="post__title">{{post.title}}</h2>
-    <quill-view-html [content]="post.text" ></quill-view-html>
-    <ul class="post__tags" >
-      <li class="post__tags-item" *ngFor="let tag of post.tags">
-        {{tag}}
-      </li>
-    </ul>
+<div class="post">
+  <div class="post__img">
+    <quill-view-html [content]="post.image"></quill-view-html>
+  </div>
+  <p class="post__date">{{ post.date | date: "MMM d, y" }}</p>
+  <h2 class="post__title">{{ post.title }}</h2>
+  <quill-view-html [content]="post.text"></quill-view-html>
+  <ul class="post__tags">
+    <li class="post__tags-item" *ngFor="let tag of post.tags">
+      {{ tag }}
+    </li>
+  </ul>
+  <button class="post__btn" [routerLink]="['/post', post.id]">Open</button>
 </div>
-
-
-
-
-
