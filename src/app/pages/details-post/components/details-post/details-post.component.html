@@ -1,1 +1,34 @@
-<p>hello</p>
+<main>
+  <section class="details">
+    <div *ngIf="post$ | async as post">
+      <div class="details__post">
+        <div class="details__wrap">
+          <div class="details__date">{{ post.date | date: "MMM d, y" }}</div>
+        </div>
+        <div class="details__info">
+          <h1 class="details__title">{{ post.title }}</h1>
+          <div class="details__img">
+            <quill-view-html [content]="post.image"></quill-view-html>
+          </div>
+          <div class="details__author">{{ post.author }}</div>
+        </div>
+        <div>
+          <quill-view-html [content]="post.text"></quill-view-html>
+        </div>
+      </div>
+    </div>
+  </section>
+  <aside class="details__posts">
+    <div class="post">
+      <div class="post__img">
+        <quill-view-html></quill-view-html>
+      </div>
+      <p class="post__date"></p>
+      <h2 class="post__title">{{ posts.title }}</h2>
+      <quill-view-html></quill-view-html>
+      <ul class="post__tags">
+        <li class="post__tags-item"></li>
+      </ul>
+    </div>
+  </aside>
+</main>

@@ -10,6 +10,14 @@
       {{ tag }}
     </li>
   </ul>
-  <button class="post__btn" [routerLink]="['/edit-post', post.id]">Edit</button>
-  <button class="post__btn" [routerLink]="['/post', post.id]">Open</button>
+  <div class="post__btns">
+    <div class="post__btns-edit">
+      <button class="post__btn" [routerLink]="['/edit-post', post.id]">
+        Edit
+      </button>
+    </div>
+    <div class="post__btns-id">
+      <button class="post__btn" [routerLink]="['/post', post.id]">Open</button>
+    </div>
+  </div>
 </div>

@@ -12,9 +12,6 @@
         <a class="header__nav-link" href="#">About</a>
       </li>
       <li *ngIf="authService.isAuthenticated()" class="header__nav-item">
-        <a class="header__nav-link" [routerLink]="['/edit-post']">EditPost</a>
-      </li>
-      <li *ngIf="authService.isAuthenticated()" class="header__nav-item">
         <a class="header__nav-link" [routerLink]="['/create-post']">NewPost</a>
       </li>
       <li *ngIf="!authService.isAuthenticated()" class="header__nav-item">
