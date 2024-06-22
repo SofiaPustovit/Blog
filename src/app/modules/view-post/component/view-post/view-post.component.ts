@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IPost } from '../../../../intefaces/post.interface';
 import { PostService } from '../../../../services/post.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-post',
@@ -13,7 +14,10 @@ export class ViewPostComponent implements OnInit {
   @Input() task = '';
   @Input() post: IPost | null = null;
 
-  constructor(private postService: PostService) {}
+  constructor(
+    private postService: PostService,
+    private router: Router,
+  ) {}
 
   ngOnInit() {
     this.initializeForm();
@@ -25,6 +29,7 @@ export class ViewPostComponent implements OnInit {
       const postForm: IPost = { ...this.postForm.value, date: new Date() };
       this.postService.createPost(postForm).subscribe((response) => {
         this.postForm.reset();
+        this.router.navigate(['post', response.name]);
       });
     }
     if (this.task === 'edit') {
@@ -33,9 +38,7 @@ export class ViewPostComponent implements OnInit {
         date: new Date(),
         id: this.post?.id,
       };
-      this.postService.updatePost(postForm).subscribe((response) => {
-        console.log(response);
-      });
+      this.postService.updatePost(postForm).subscribe((response) => {});
       this.postForm.reset();
     }
   }
@@ -48,5 +51,13 @@ export class ViewPostComponent implements OnInit {
       text: new FormControl(this.post?.text, [Validators.required]),
       category: new FormControl(this.post?.category, [Validators.required]),
     });
+  }
+
+  deletePost() {
+    if (!(this.post?.id === undefined) && this.task === 'edit') {
+      this.postService.deletePost(this.post.id).subscribe((response) => {
+        this.router.navigate(['']);
+      });
+    }
   }
 }

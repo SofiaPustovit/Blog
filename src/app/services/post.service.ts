@@ -8,8 +8,11 @@ import { IPost } from '../intefaces/post.interface';
 export class PostService {
   constructor(private http: HttpClient) {}
 
-  createPost(post: any): Observable<any> {
-    return this.http.post(`${environment?.['fbDbUrl']}/posts.json`, post);
+  createPost(post: any): Observable<{ name: string }> {
+    return this.http.post<{ name: string }>(
+      `${environment?.['fbDbUrl']}/posts.json`,
+      post,
+    );
   }
 
   getAllPost(): Observable<IPost[]> {
@@ -39,6 +42,12 @@ export class PostService {
     return this.http.patch<IPost>(
       `${environment?.['fbDbUrl']}/posts/${post.id}.json`,
       post,
+    );
+  }
+
+  deletePost(id: string): Observable<void> {
+    return this.http.delete<void>(
+      `${environment?.['fbDbUrl']}/posts/${id}.json`,
     );
   }
 }

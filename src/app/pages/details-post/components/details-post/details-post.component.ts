@@ -25,7 +25,7 @@ export class DetailsPostComponent implements OnInit {
         }),
       );
       this.postService.getAllPost().subscribe((responce) => {
-        this.posts = responce;
+        this.posts = responce.filter((post) => post.id !== params['id']);
       });
     });
   }

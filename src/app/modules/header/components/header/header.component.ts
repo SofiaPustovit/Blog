@@ -1,15 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../../services/auth.service';
+import { LayoutService } from '../../../../services/layout.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   blackMode: boolean = false;
 
-  constructor(protected authService: AuthService) {}
+  ngOnInit(): void {
+    document.body.setAttribute(
+      this.layoutService.themeKey,
+      this.layoutService.getTheme(),
+    );
+    if (this.layoutService.getTheme() === this.layoutService.themeDark) {
+      this.blackMode = true;
+    }
+  }
+
+  constructor(
+    protected authService: AuthService,
+    private layoutService: LayoutService,
+  ) {}
 
   logOff() {
     this.authService.logout();
@@ -17,5 +31,6 @@ export class HeaderComponent {
 
   isMode() {
     this.blackMode = !this.blackMode;
+    this.layoutService.toggleTheme();
   }
 }

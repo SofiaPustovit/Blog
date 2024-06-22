@@ -6,11 +6,12 @@ import { PostService } from '../../services/post.service';
 import { AuthService } from '../../services/auth.service';
 import { FooterModule } from '../footer/footer.module';
 import { DetailsPostModule } from '../../pages/details-post/details.post.module';
+import { LayoutService } from '../../services/layout.service';
 
 @NgModule({
   imports: [CommonModule, RouterLink, FooterModule, DetailsPostModule],
   declarations: [HeaderComponent],
   exports: [HeaderComponent],
-  providers: [AuthService],
+  providers: [AuthService, LayoutService],
 })
 export class HeaderModule {}

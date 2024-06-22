@@ -2,14 +2,21 @@
   <div class="post__img">
     <quill-view-html [content]="post.image"></quill-view-html>
   </div>
-  <p class="post__date">{{ post.date | date: "MMM d, y" }}</p>
-  <h2 class="post__title">{{ post.title }}</h2>
-  <quill-view-html [content]="post.text"></quill-view-html>
-  <ul class="post__tags">
-    <li class="post__tags-item" *ngFor="let tag of post.tags">
-      {{ tag }}
-    </li>
-  </ul>
+  <div class="post__content">
+    <p class="post__date">{{ post.date | date: "MMM d, y" }}</p>
+    <h2 class="post__title">{{ post.title }}</h2>
+    <quill-view-html
+      [content]="post.text.slice(0, 100) + '...'"
+    ></quill-view-html>
+    <ul class="post__tags">
+      <li class="post__tags-item" *ngFor="let tag of post.tags">
+        {{ tag }}
+      </li>
+    </ul>
+    <div class="post__category">
+      <p class="post__category-item">{{ post.category }}</p>
+    </div>
+  </div>
   <div class="post__btns">
     <div class="post__btns-edit">
       <button class="post__btn" [routerLink]="['/edit-post', post.id]">
