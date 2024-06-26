@@ -1,10 +1,10 @@
 <form class="form" [formGroup]="postForm">
   <div class="form__container">
     <div class="form__group">
-      <label>Image: </label>
+      <label class="form__label">Image: </label>
       <quill-editor formControlName="image"></quill-editor>
       <div
-        class="validation"
+        class="form__validation"
         *ngIf="postForm.get('image')?.touched && postForm.get('image')?.invalid"
       >
         <small *ngIf="postForm.get('image')?.hasError('required')"
@@ -13,10 +13,10 @@
       </div>
     </div>
     <div class="form__group">
-      <label>Text: </label>
+      <label class="form__label">Text: </label>
       <quill-editor formControlName="text"></quill-editor>
       <div
-        class="validation"
+        class="form__validation"
         *ngIf="postForm.get('text')?.touched && postForm.get('text')?.invalid"
       >
         <small *ngIf="postForm.get('image')?.hasError('required')"
@@ -25,10 +25,10 @@
       </div>
     </div>
     <div class="form__group">
-      <label>Author: </label>
-      <input formControlName="author" />
+      <label class="form__label">Author: </label>
+      <input formControlName="author" class="form__input" />
       <div
-        class="validation"
+        class="form__validation"
         *ngIf="
           postForm.get('author')?.touched && postForm.get('author')?.invalid
         "
@@ -39,10 +39,10 @@
       </div>
     </div>
     <div class="form__group">
-      <label>Title: </label>
-      <input formControlName="title" />
+      <label class="form__label">Title: </label>
+      <input formControlName="title" class="form__input" />
       <div
-        class="validation"
+        class="form__validation"
         *ngIf="postForm.get('title')?.touched && postForm.get('title')?.invalid"
       >
         <small *ngIf="postForm.get('image')?.hasError('required')"
@@ -51,22 +51,22 @@
       </div>
     </div>
     <div class="form__group">
-      <label>Category: </label>
+      <label class="form__label">Category: </label>
       <select name="postCategory" id="" formControlName="category">
-        <option value="nature">Nature</option>
-        <option value="animals">Animals</option>
-        <option value="people">People</option>
-        <option value="culture">Culture</option>
+        <option value="Nature">Nature</option>
+        <option value="Animals">Animals</option>
+        <option value="People">People</option>
+        <option value="Culture">Culture</option>
       </select>
     </div>
   </div>
   <div class="form__btns">
-    <button class="form__btn-save" type="submit" (click)="submit()">
+    <button class="form__btn save" type="submit" (click)="submit()">
       Save
     </button>
     <button
       *ngIf="task === 'edit'"
-      class="form__btns-delete"
+      class="form__btn delete"
       (click)="deletePost()"
     >
       Delete

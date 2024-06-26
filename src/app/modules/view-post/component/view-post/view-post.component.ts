@@ -38,7 +38,9 @@ export class ViewPostComponent implements OnInit {
         date: new Date(),
         id: this.post?.id,
       };
-      this.postService.updatePost(postForm).subscribe((response) => {});
+      this.postService.updatePost(postForm).subscribe((response) => {
+        this.router.navigate(['']);
+      });
       this.postForm.reset();
     }
   }

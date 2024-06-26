@@ -1,10 +1,6 @@
-post{
-  --font-color:#1a1a1a ;
-}
 
 .post {
   position: relative;
-
   height:476px ;
   margin: 0 auto;
   width: 100%;
@@ -30,7 +26,7 @@ post{
   &__title{
     font-weight: 600;
     font-size: 24px;
-    color: #1a1a1a;
+    color:var(--text-color);
     margin-bottom: 8px;
     text-align: left;
 
@@ -38,7 +34,7 @@ post{
   &__text{
     font-weight: 400;
     font-size: 16px;
-    color: #667085;
+    color: var(--text-color);
     margin-bottom: 24px;
   }
   &__tags {
@@ -58,29 +54,39 @@ post{
   }
   &__btns{
     display: flex;
-    justify-content: space-around;
-
-
-  }
-  &__btn{
+    justify-content: center;
+    gap: 20px;
     position: absolute;
     bottom: 0;
+  }
+  &__btn{
     width: 100px;
     height: 25px;
     font-size: 12px;
     font-weight: 400;
     color: #ffffff;
-    background-color: #000000;
-  ;
-
-
-
+    background-color:#000000;
   }
   &__btn:hover{
     background-color: rgba(0, 0, 0, 0.5);
-    color: #000000;
     transition: 0.3s;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  &__category{
+    background-color: var(--category-color);
+    width: 146px;
+    border-radius: 10px;
+    padding-top: 0;
+
+  }
+  &__category-item{
+    font-weight: 400;
+    font-size: 20px;
+    color:var(--text-color);
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+    top: 0;
   }
 
 

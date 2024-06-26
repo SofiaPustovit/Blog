@@ -2,23 +2,25 @@
 @import "quill/dist/quill.core.css";
 @import "quill/dist/quill.snow.css";
 @import "assets/style/variables.scss";
+@import "assets/style/-var.scss";
 
 body{
  background-color: var(--bg-color);
   font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+
+
 }
 
-//.ql-container{
-//  display: grid;
-//  gap: 20px;
-//}
+
+
 
 .ql-editor {
   padding: 0 ;
   margin: 0 auto;
   font-weight: 400;
   font-size: 16px;
-  color: #1a1a1a;
+  color: var(--text-color);
 
   img{
     height: 240px;
