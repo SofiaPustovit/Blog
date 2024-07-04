@@ -3,9 +3,122 @@ main{
   margin: 0 auto;
   display: grid;
   grid-template-columns:2fr 1fr;
-  margin-top: 20px;
+  padding: 20px;
 }
 
-.details{
+.details {
+  position: relative;
+  &__posts {
+    margin-top: 40px;
 
+  }
+
+  &__date {
+    color: #6941C6;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    color: var(--text-color);
+  }
+
+  &__author {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--text-color);
+  }
+
+  &__category {
+    margin-top: 10px;
+    background-color: var(--category-color);
+    width: 146px;
+    border-radius: 10px;
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+  &__post-date{
+    color: #6941C6;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  &__post-title{
+    font-weight: 600;
+    font-size: 20px;
+    color:var(--text-color);
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  &__post-tags-item{
+    margin-top: 10px;
+    background-color: var(--category-color);
+    width: 146px;
+    border-radius: 10px;
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+  &__post-btns{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+  }
+  &__post-btn{
+    width: 100px;
+    height: 25px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #ffffff;
+    background-color:#000000;
+    margin-bottom: 20px;
+  }
+  &__post-btn:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+
+  }
+}
+
+.details__loading{
+  display: grid;
+  justify-content: center;
+  position: fixed;
+  top: 15%;
+  z-index: 3;
+  width: 100%;
+}
+
+.loader {
+  width: 120px;
+  height: 22px;
+  border-radius: 40px;
+  color: #000;
+  border: 2px solid;
+  position: relative;
+  overflow: hidden;
+
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  width: 14px;
+  top: 0;
+  bottom: 0;
+  left: -20px;
+  border-radius: inherit;
+  background: currentColor;
+  box-shadow: -10px 0 12px 3px currentColor;
+  clip-path: polygon(0 5%, 100% 0,100% 100%,0 95%,-30px 50%);
+  animation: l14 1s infinite linear;
+}
+@keyframes l14 {
+  100% {left: calc(100% + 20px)}
 }

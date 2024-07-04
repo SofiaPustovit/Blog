@@ -1,4 +1,10 @@
 <main>
+  <ng-container *ngIf="isLoading">
+    <div class="details__loading">
+      <div class="loader"></div>
+    </div>
+  </ng-container>
+
   <section class="details">
     <div *ngIf="post$ | async as post">
       <div class="details__post">
@@ -11,8 +17,9 @@
             <quill-view-html [content]="post.image"></quill-view-html>
           </div>
           <div class="details__author">{{ post.author }}</div>
+          <div class="details__category">{{ post.category }}</div>
         </div>
-        <div>
+        <div class="details__text">
           <quill-view-html [content]="post.text"></quill-view-html>
         </div>
       </div>
@@ -20,23 +27,31 @@
   </section>
   <aside class="details__posts">
     <div class="post" *ngFor="let item of posts">
-      <div class="post__img">
+      <div class="details__post-img">
         <quill-view-html [content]="item.image"></quill-view-html>
       </div>
-      <p class="details__date">{{ item.date | date: "MMM d, y" }}</p>
-      <h2 class="details__title">{{ item.title }}</h2>
-      <quill-view-html [content]="item.text"></quill-view-html>
-      <ul class="details__tags">
-        <li class="details__tags-item">{{ item.category }}</li>
+      <p class="details__post-date">{{ item.date | date: "MMM d, y" }}</p>
+      <h2 class="details__post-title">{{ item.title }}</h2>
+      <div class="details__post-text">
+        <quill-view-html [content]="item.text"></quill-view-html>
+      </div>
+      <ul class="details__post-tags">
+        <li class="details__post-tags-item">{{ item.category }}</li>
       </ul>
-      <div class="post__btns">
-        <div class="post__btns-edit">
-          <button class="post__btn" [routerLink]="['/edit-post', item.id]">
+      <div class="details__post-btns">
+        <div
+          class="details__post-btns-edit"
+          *ngIf="authService.isAuthenticated()"
+        >
+          <button
+            class="details__post-btn"
+            [routerLink]="['/edit-post', item.id]"
+          >
             Edit
           </button>
         </div>
-        <div class="post__btns-id">
-          <button class="post__btn" [routerLink]="['/post', item.id]">
+        <div class="details__post-btns-id">
+          <button class="details__post-btn" [routerLink]="['/post', item.id]">
             Open
           </button>
         </div>

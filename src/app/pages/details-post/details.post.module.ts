@@ -5,6 +5,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { PostService } from '../../services/post.service';
 import { QuillViewHTMLComponent } from 'ngx-quill';
 import { PostModule } from '../../modules/post/post.module';
+import { AuthService } from '../../services/auth.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { PostModule } from '../../modules/post/post.module';
   ],
   declarations: [DetailsPostComponent],
   exports: [DetailsPostComponent],
-  providers: [PostService],
+  providers: [PostService, AuthService],
 })
 export class DetailsPostModule {}

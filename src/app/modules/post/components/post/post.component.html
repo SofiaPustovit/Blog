@@ -18,7 +18,7 @@
     <!--    </ul>-->
   </div>
   <div class="post__btns">
-    <div class="post__btns-edit">
+    <div class="post__btns-edit" *ngIf="authService.isAuthenticated()">
       <button class="post__btn" [routerLink]="['/edit-post', post.id]">
         Edit
       </button>
