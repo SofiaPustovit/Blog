@@ -1,10 +1,9 @@
 <main>
   <ng-container *ngIf="isLoading">
     <div class="details__loading">
-      <div class="loader"></div>
+      <app-loader></app-loader>
     </div>
   </ng-container>
-
   <section class="details">
     <div *ngIf="post$ | async as post">
       <div class="details__post">

@@ -8,9 +8,12 @@
     <div class="post__category">
       <p class="post__category-item">{{ post.category }}</p>
     </div>
-    <quill-view-html
-      [content]="post.text.slice(0, 100) + '...'"
-    ></quill-view-html>
+    <div class="post__text">
+      <quill-view-html
+        [content]="post.text.slice(0, 100) + '...'"
+      ></quill-view-html>
+    </div>
+
     <!--    <ul class="post__tags">-->
     <!--      <li class="post__tags-item" *ngFor="let tag of post.tags">-->
     <!--        {{ tag }}-->

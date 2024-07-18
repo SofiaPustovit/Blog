@@ -1,5 +1,4 @@
 .main {
-  width: 1216px;
   margin: 0 auto;
 
   &__title {
@@ -10,14 +9,16 @@
 
   }
 
-  &__title::before {
-    content: '';
-    display: block;
-    margin: 0 auto;
-    margin-top: 20px;
-    height: 1px;
-    width: 1200px;
-    background-color: #1a1a1a;
-    margin-bottom: 20px;
+  &__title{
+    &:before {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      height: 1px;
+      width: 1200px;
+      background-color: #1a1a1a;
+      margin-bottom: 20px;
+    }
   }
 }

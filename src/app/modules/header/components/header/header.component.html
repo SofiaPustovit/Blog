@@ -1,28 +1,28 @@
 <div class="header">
   <p class="header__logo">Your Name</p>
   <div class="header__nav">
-    <ul class="header__nav-list">
-      <li class="header__nav-item">
-        <a class="header__nav-link" [routerLink]="['']">Blog</a>
+    <ul class="header__list">
+      <li class="header__item">
+        <a class="header__link" [routerLink]="['']">Blog</a>
       </li>
-      <li class="header__nav-item">
-        <a class="header__nav-link" href="#">Projects</a>
+      <li class="header__item">
+        <a class="header__link" href="#">Projects</a>
       </li>
-      <li class="header__nav-item">
-        <a class="header__nav-link" href="#">About</a>
+      <li class="header__item">
+        <a class="header__link" href="#">About</a>
       </li>
-      <li *ngIf="authService.isAuthenticated()" class="header__nav-item">
-        <a class="header__nav-link" [routerLink]="['/create-post']">NewPost</a>
+      <li *ngIf="authService.isAuthenticated()" class="header__item">
+        <a class="header__link" [routerLink]="['/create-post']">NewPost</a>
       </li>
-      <li *ngIf="!authService.isAuthenticated()" class="header__nav-item">
-        <a class="header__nav-link" [routerLink]="['/login']">Login</a>
+      <li *ngIf="!authService.isAuthenticated()" class="header__item">
+        <a class="header__link" [routerLink]="['/login']">Login</a>
       </li>
       <li
         *ngIf="authService.isAuthenticated()"
-        class="header__nav-item"
+        class="header__item"
         (click)="logOff()"
       >
-        <a class="header__nav-link" href="#">Log Off</a>
+        <a class="header__link" href="#">Log Off</a>
       </li>
     </ul>
     <div class="header__mode" [ngClass]="{ dayoff: blackMode }">

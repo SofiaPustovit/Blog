@@ -85,3 +85,18 @@ picture {
   height: auto;
   max-width: 100%;
 }
+
+.ant-modal-content{
+  background: transparent;
+}
+
+.ant-modal-body {
+  padding: 0;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+.ant-modal-close-x{
+  display: none;
+}
+

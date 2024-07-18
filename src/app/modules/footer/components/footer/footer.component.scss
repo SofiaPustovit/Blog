@@ -1,29 +1,62 @@
-footer {
-  --font-family: "Inter", sans-serif;
-  --second-family: "Gilroy", sans-serif;
-  --font-color: #1a1a1a;
-}
 
 .footer{
   display: flex;
   justify-content: space-around;
   align-content: center;
   margin: 0 auto;
-  width: 1216px;
   padding-bottom: 30px;
+  &__list{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 30px;
+
+  }
+  &__link{
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+  }
 }
 
-.footer ul{
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  column-gap: 30px;
+@media (max-width: 1374px) {
+  .footer{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    &__list{
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      column-gap: 25px;
+
+    }
+    &__link{
+      text-decoration: none;
+      color: var(--font-color);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 120%;
+    }
+  }
+
 }
 
-.footer ul li a{
-  text-decoration: none;
-  color: var(--font-color);
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 120%;
+@media (max-width: 930px) {
+  .footer{
+    &__list{
+      column-gap: 20px;
+    }
+    &__link{
+      font-size: 14px;
+
+    }
+  }
+
 }
+
+

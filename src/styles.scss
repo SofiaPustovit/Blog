@@ -2,18 +2,21 @@
 @import "quill/dist/quill.core.css";
 @import "quill/dist/quill.snow.css";
 @import "assets/style/variables.scss";
-@import "assets/style/-var.scss";
+@import "assets/style/reset.scss";
+
+
 
 body{
- background-color: var(--bg-color);
+  display: block;
+  padding: 20px 112px 20px 112px;
+  background-color: var(--bg-color);
   font-family: 'Inter', sans-serif;
   color: var(--text-color);
 
 
+
+
 }
-
-
-
 
 .ql-editor {
   padding: 0 ;
@@ -31,8 +34,9 @@ body{
 }
 
 .details__img .ql-snow .ql-editor img{
-  width: 700px;
+  width: 100%;
   height: 380px;
+  padding: 0px 30px 0px 0px ;
 }
 .details__text .ql-snow .ql-editor p{
   color: var(--text-color);
@@ -40,6 +44,7 @@ body{
   font-size: 16px;
   margin-top: 10px;
   max-width: 700px;
+
 }
 
 .details__post-text .ql-snow .ql-editor p{
@@ -50,6 +55,59 @@ body{
 
 }
 
+@media (max-width: 1393px){
+  body{
+    margin: 0 auto;
+  }
+  .ql-snow .ql-editor img{
+    height: 200px;
+    width: 384px;
+  }
+  .ql-editor p{
+    padding-right: 20px;
+  }
+
+}
+
+@media (max-width: 1242px){
+ .post__text .ql-snow .ql-editor p{
+    font-size: 16px;
+    padding-right: 180px;
+  }
+  .ql-snow .ql-editor img{
+    height: 200px;
+    width: 320px;
+  }
+}
+
+@media (max-width: 1094px){
+  .post__text .ql-snow .ql-editor p{
+    font-size: 12px;
+    padding-right: 80px;
+  }
+  .ql-snow .ql-editor img{
+    height: 200px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 930px){
+  .ql-snow .ql-editor img{
+    height: 150px;
+    width: 250px;
+  }
+  .post__text .ql-snow .ql-editor p{
+    font-size: 12px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 800px){
+  .ql-snow .ql-editor img {
+    width: 400px;
+    height: 200px;
+  }
+}
 
 
 

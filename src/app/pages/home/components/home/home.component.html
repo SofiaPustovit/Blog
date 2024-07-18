@@ -1,12 +1,8 @@
 <section class="home">
-  <div class="home__title-up-line"></div>
   <h1 class="home__title">THE BLOG</h1>
-  <div class="home__title-under-line"></div>
   <p class="home__text">All blog posts</p>
   <ng-container *ngIf="isLoading">
-    <div class="home__loading">
-      <div class="loader"></div>
-    </div>
+    <app-loader></app-loader>
   </ng-container>
   <ng-container *ngIf="isNothing">
     <div class="home__nothing">

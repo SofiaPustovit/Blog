@@ -1,22 +1,17 @@
-header{
-  --font-color: #1a1a1a;
-  --basic-white: #fff;
-}
 
 .header {
-  width: 1216px;
-  margin: 0 auto;
   display: flex;
   align-content: center;
   justify-content: space-between;
-  padding-top: 40px;
+  padding: 40px 0px 0px 50px;
 
   &__logo {
     font-weight: 600;
     font-size: 20px;
-    line-height: 120%;
     color: var(--font-color);
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
 
   &__nav {
@@ -24,15 +19,14 @@ header{
     justify-content: space-between;
   }
 
-
-  &__nav-list {
+  &__list {
     list-style: none;
     display: flex;
     justify-content: space-between;
     column-gap: 25px;
   }
 
-  &__nav-link {
+  &__link {
     position: relative;
     text-decoration: none;
     font-weight: 400;
@@ -40,23 +34,31 @@ header{
     line-height: 120%;
     color: var(--font-color);
   }
-  &__nav-link::after{
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: 0;
-    display: inline-block;
-    width: 0;
-    height: 2px;
-    background-color: var(--line-color);
-    transition: 0.5s;
+  &__link{
+    &:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      display: inline-block;
+      width: 0;
+      height: 2px;
+      background-color: var(--line-color);
+      transition: 0.5s;
+    }
   }
-  &__nav-link::after{
-    left: 50%;
-    transform: translateX(-50%);
+  &__link{
+    &:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
-  &__nav-link:hover:after{
-    width: 100%;
+  &__link{
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
   }
 
 
@@ -68,56 +70,229 @@ header{
     padding: 8px 16px;
     width: 80px;
     height: 30px;
-    background-color: #1a1a1a;
-    margin-left: 25px;
+    background-color: var(--text-color);
+    margin: 0px 60px 0px 10px;
     position: relative;
 
   }
-  &__mode::after{
-    content: "";
-    display: inline-block;
-    background-color: #FFFFFF;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    z-index: 4;
-    position: absolute;
-    right: 20px;
+  &__mode{
+    &:after {
+      content: "";
+      display: inline-block;
+      background-color: #FFFFFF;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      z-index: 4;
+      position: absolute;
+      right: 5px;
+    }
   }
   &__mode-light{
     position: absolute;
-    left: 20px;
+    left: 5px;
     border-radius: 10px;
   }
-  &__mode-light:hover{
-    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
-    transition: 0.3s;
-    cursor: pointer;
+  &__mode-light{
+    &:hover {
+      box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+      transition: 0.3s;
+      cursor: pointer;
+    }
   }
   &__mode-dark{
     position: absolute;
-    right: 20px;
+    right: 5px;
     cursor: pointer;
   }
-  &__mode.dayoff{
-    background-color: #FFF;
+  &__mode{
+    &.dayoff {
+      background-color: var(--text-color);
+    }
   }
-  &__mode.dayoff::after{
-    position: absolute;
-    left: 20px;
-    background-color: #000000;
-    transition: 0.3s;
+  &__mode{
+    &.dayoff{
+      &:after {
+        position: absolute;
+        left: 5px;
+        background-color:var(--bg-color);
+        transition: 0.3s;
+      }
+    }
   }
-  &__mode-light.dayoff{
-    z-index: -1;
+  &__mode-light {
+    &.dayoff {
+      z-index: -1;
+    }
   }
-  &__mode-dark.dayoff{
-    z-index: 2;
+  &__mode-dark{
+    &.dayoff {
+      z-index: 2;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .header {
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    &__logo {
+      margin-left: 0px;
+
+    }
+
+    &__mode {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 29px;
+      padding: 8px 16px;
+      width: 80px;
+      height: 30px;
+      background-color: var(--text-color);
+      margin: 0px 60px 0px 10px;
+      position: relative;
+    }
   }
 
 
 }
 
+@media (max-width: 1393px) {
+  .header {
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding-top: 40px;
+
+    &__logo {
+      font-weight: 600;
+      font-size: 20px;
+      margin-left: 75px;
+      color: var(--font-color);
+      cursor: pointer;
+    }
+
+    &__list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 20px;
+    }
+
+    &__link {
+      position: relative;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--font-color);
+    }
+
+    &__link {
+      &:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        display: inline-block;
+        width: 0;
+        height: 2px;
+        background-color: var(--line-color);
+        transition: 0.5s;
+      }
+    }
+
+    &__mode {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 29px;
+      padding: 8px 16px;
+      width: 80px;
+      height: 30px;
+      background-color: var(--text-color);
+      margin: 0px 75px 0px 10px;
+      position: relative;
+
+    }
+
+  }
+}
 
 
+@media (max-width: 1093px) {
+  .header {
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    &__logo {
+      margin-left: 25px;
+    }
 
+    &__mode {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 29px;
+      padding: 8px 16px;
+      width: 80px;
+      height: 30px;
+      background-color: var(--text-color);
+      margin: 0px 75px 0px 10px;
+      position: relative;
+    }
+  }
+}
+
+
+@media (max-width: 930px) {
+  .header{
+    &__logo{
+      font-size: 16px;
+
+    }
+    &__link {
+      font-size: 12px;
+      gap: 5px;
+    }
+  }
+
+}
+
+
+@media (max-width: 830px) {
+  .header{
+    &__logo{
+      font-size: 14px;
+      margin-left:0px;
+
+    }
+    &__link {
+      font-size: 10px;
+      gap: 5px;
+    }
+
+    &__mode {
+      border-radius: 29px;
+      padding: 8px 16px;
+      width: 60px;
+      height: 30px;
+      margin-right: 50px;
+    }
+
+
+  }
+}
+
+@media (max-width: 720px) {
+  .header{
+
+  }
+}

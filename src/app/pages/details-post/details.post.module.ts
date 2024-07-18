@@ -6,6 +6,7 @@ import { PostService } from '../../services/post.service';
 import { QuillViewHTMLComponent } from 'ngx-quill';
 import { PostModule } from '../../modules/post/post.module';
 import { AuthService } from '../../services/auth.service';
+import { LoaderComponent } from '../../modules/loader/components/loader.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { AuthService } from '../../services/auth.service';
     RouterModule.forChild([{ path: ':id', component: DetailsPostComponent }]),
     QuillViewHTMLComponent,
     PostModule,
+    LoaderComponent,
   ],
   declarations: [DetailsPostComponent],
   exports: [DetailsPostComponent],

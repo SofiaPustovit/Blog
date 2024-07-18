@@ -1,35 +1,14 @@
-.main{
-  margin: 0 auto;
 
-  &__title{
-    font-size: 32px;
-    font-weight: 400;
-    padding-top: 30px;
-    text-align: center;
-
-  }
-  &__title::before{
-    content: '';
-    display:block;
-    margin: 20px auto;
-    height: 1px;
-    width: 1200px;
-    background-color: var(--bg-color);
-  }
-  &__loading {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-  }
-
+.loading{
+  display: flex;
+  justify-content: center;
 }
 
 .loader {
-
   width: 120px;
   height: 22px;
   border-radius: 40px;
-  color: #000;
+  color: var(--text-color);
   border: 2px solid;
   position: relative;
   overflow: hidden;
@@ -48,8 +27,6 @@
     animation: l14 1s infinite linear;
   }
 }
-
-
 @keyframes l14 {
   100% {left: calc(100% + 20px)}
 }

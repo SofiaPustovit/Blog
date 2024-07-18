@@ -1,6 +1,5 @@
 .form{
   display: block;
-  width: 1216px;
   margin: 0 auto;
   &__container{
     display: flex;
@@ -37,9 +36,11 @@
     margin-top: 30px;
 
   }
-  &__btn:hover{
-    background-color: #667085;
-    transition: 0.3s;
+  &__btn{
+    &:hover {
+      background-color: #667085;
+      transition: 0.3s;
+    }
   }
 }
 

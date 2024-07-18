@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { PostModule } from '../../modules/post/post.module';
 import { PostService } from '../../services/post.service';
+import { LoaderComponent } from '../../modules/loader/components/loader.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { PostService } from '../../services/post.service';
       },
     ]),
     PostModule,
+    LoaderComponent,
   ],
   declarations: [HomeComponent],
   providers: [PostService],
